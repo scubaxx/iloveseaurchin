@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Yo Daniel:
 
-Things you may want to cover:
+I'm having a really hard time in Section 4 Lecture 15 'Modify the Credit Card Form'
 
-* Ruby version
+After I add the JS code minute 2:31 in the mentioned above section. My app stops rendering the stripe form period.
 
-* System dependencies
+Before adding the JS, the CC form renders fine. I'm enclosing Github repos of the project.
 
-* Configuration
+Prior to adding the JS: https://github.com/scubaxx/iloveseaurchin
 
-* Database creation
+I noticed that your tutorial doesn't include '@import "bootstrap-sprockets";' in the file bootstrap_custom.css.scss
 
-* Database initialization
+Please help me, I'm including these two repos so that you can see the dependencies and versions included in my project.
 
-* How to run the test suite
+Thanks in advance man!
 
-* Services (job queues, cache servers, search engines, etc.)
+Mauricio
 
-* Deployment instructions
 
 * ...
