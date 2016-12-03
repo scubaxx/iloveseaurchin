@@ -26,6 +26,8 @@
 
   <script src="https://checkout.stripe.com/checkout.js"></script>
   <%= hidden_field_tag 'stripeToken' %>
+  <%= hidden_field_tag 'stripeEmail' %>
+  <button></button>
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
           data-amount="500"
