@@ -27,7 +27,7 @@
   <script src="https://checkout.stripe.com/checkout.js"></script>
   <%= hidden_field_tag 'stripeToken' %>
   <%= hidden_field_tag 'stripeEmail' %>
-  <button id="btn-buy" type="button" class="btn-sucess btn-lg btn-block"><span class="glyphicon glyphicon-ok"></span>Buy Uni Now!</button>
+  <button id="btn-buy" type="button" class="btn btn-sucess btn-lg btn-block"><span class="glyphicon glyphicon-ok"></span>Buy Uni Now!</button>
 <script>
     var handler = StripeCheckout.configure({
       key: '<%= Rails.configuration.stripe[:publishable_key] %>',
