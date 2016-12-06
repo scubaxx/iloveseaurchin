@@ -2,7 +2,6 @@
         <article id="details-article" class="col-sm-8">
             <h1 id="article-title">Santa Barbara Sea Urchin</br> <span class="font-weight-light">Sea Urchins</span></h1>
            
-
             <p>We harvest the highest quality Sea Urchins and deliver them to you.</p>
 
             <p>The best quality Sea Urchin in the world.</p>
@@ -13,8 +12,7 @@
                 <li>Individual boxes for restaurants.</li>
             </ul>
         </article>
-        <aside id="details-aside" class="col-sm-4">
-            
+        <aside id="details-aside" class="col-sm-4">       
 
 <%= form_tag charges_path, id:'chargeForm' do %>
 
@@ -26,6 +24,7 @@
    
       <script src="https://checkout.stripe.com/checkout.js"></script>
       <%= hidden_field_tag 'stripeToken' %>
+      <%= hidden_field_tag 'amount', 499 %>
       <%= hidden_field_tag 'stripeEmail' %>
       <button id="btn-buy" type="button" class="btn btn-success btn-lg btn-block"><span class="glyphicon glyphicon-ok"></span>Buy Uni!</button>
 <script>
@@ -39,16 +38,13 @@
 });
 document.getElementById('btn-buy').addEventListener('click', function(e) {
       handler.open({
-        name: 'Learn Rails',
+        name: 'Santa Barbara Uni',
         description: 'Buy this item for ($4.99)',
-        amount: 499
+        amount: document.getElementById("amount").value
     });   
     e.preventDefault();  
    }) 
 </script>
-
-
-
 
         <% end %>
             <ul id="details-infobox" class="list-group">
