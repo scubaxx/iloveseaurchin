@@ -1,16 +1,8 @@
     <section id="content-details" class="row clearfix">
         <article id="details-article" class="col-sm-8">
-            <h1 id="article-title">Santa Barbara Sea Urchin</br> <span class="font-weight-light">Sea Urchins</span></h1>
+            <h1 id="article-title"><%= @product.title %></br> <span class="font-weight-light"><%= @product.subtitle %></span></h1>
            
-            <p>We harvest the highest quality Sea Urchins and deliver them to you.</p>
-
-            <p>The best quality Sea Urchin in the world.</p>
-            <p><strong>What You Get</strong></p>
-            <ul class="no-indent">
-                <li>Live Sea Urchins.</li>
-                <li>Golden Quality.</li>
-                <li>Individual boxes for restaurants.</li>
-            </ul>
+        <%= raw @product.description %>    
         </article>
         <aside id="details-aside" class="col-sm-4">       
 
@@ -24,7 +16,7 @@
    
       <script src="https://checkout.stripe.com/checkout.js"></script>
       <%= hidden_field_tag 'stripeToken' %>
-      <%= hidden_field_tag 'amount', 499 %>
+      <%= hidden_field_tag 'amount', @product.price_in_cents %>
       <%= hidden_field_tag 'stripeEmail' %>
       <button id="btn-buy" type="button" class="btn btn-success btn-lg btn-block"><span class="glyphicon glyphicon-ok"></span>Buy Uni!</button>
 <script>
@@ -39,7 +31,7 @@
 document.getElementById('btn-buy').addEventListener('click', function(e) {
       handler.open({
         name: 'Santa Barbara Uni',
-        description: 'Buy this item for ($4.99)',
+        description: '<%= @product.title %> ($<%= @product.price %>)',
         amount: document.getElementById("amount").value
     });   
     e.preventDefault();  
@@ -49,8 +41,8 @@ document.getElementById('btn-buy').addEventListener('click', function(e) {
         <% end %>
             <ul id="details-infobox" class="list-group">
               <li class="list-group-item active clearfix">Info</li>
-              <li class="list-group-item">What You Get</li>
-              <li class="list-group-item">This Is Included</li>
+              <li class="list-group-item"><%= @product.info %></li>
+              
             </ul>
         </aside>
     </section>
